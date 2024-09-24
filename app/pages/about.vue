@@ -4,6 +4,8 @@
     </div>
 </template>
 
-<script setup lang="ts">
-
+<script setup>
+definePageMeta({
+    layout: "another",
+})
 </script>
