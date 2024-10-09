@@ -1,13 +1,17 @@
-import { NuxtLink } from '../../.nuxt/components';
 <template>
     <div class="container mx-auto max-w-2xl">
         <header class="flex align-middle justify-between mt-5">
-            <div>
-                <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200">Frane Spralja</NuxtLink>
+            <div class="flex items-center space-x-12">
+                <div>
+                    <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200">Frane Spralja</NuxtLink>
+                </div>
+                <Menu />
             </div>
-            <Menu />
+            <ClientOnly>
+                <ColorModeSelector />
+            </ClientOnly>
         </header>
-        <main class="p-2">
+        <main class="p-2 mt-10">
             <slot />
         </main>
     </div>
@@ -34,6 +38,7 @@ useHead({
 
 <style>
 body {
+    @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-50;
     font-family: 'Roboto';
 }
 </style>
